@@ -1,0 +1,41 @@
+@TaskManagement.Api_HostAddress = http://localhost:5135
+
+GET {{TaskManagement.Api_HostAddress}}/api/tasks
+Accept: application/json
+
+###
+
+GET {{TaskManagement.Api_HostAddress}}/api/tasks/1
+Accept: application/json
+
+###
+
+POST {{TaskManagement.Api_HostAddress}}/api/tasks
+Content-Type: application/json
+
+{
+  "title": "Write report",
+  "description": "Quarterly report",
+  "status": "Todo",
+  "dueDate": "2026-10-01T00:00:00",
+  "assigneeName": "An"
+}
+
+###
+
+PUT {{TaskManagement.Api_HostAddress}}/api/tasks/1
+Content-Type: application/json
+
+{
+  "title": "Write report",
+  "description": "Quarterly report",
+  "status": "InProgress",
+  "dueDate": "2026-10-01T00:00:00",
+  "assigneeName": "An"
+}
+
+###
+
+DELETE {{TaskManagement.Api_HostAddress}}/api/tasks/1
+
+###
